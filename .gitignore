@@ -1,0 +1,21 @@
+# Binaries
+logbook
+logbook.exe
+
+# Runtime data
+logbook.txt
+
+# Vim swap / backup files
+*.swp
+*.swo
+*.swn
+*.swm
+*.un~
+*~
+
+# Object files
+*.o
+
+# OS / editor noise
+.DS_Store
+
