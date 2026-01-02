@@ -1,6 +1,11 @@
 # Logbook CLI (C)
 
 
+![Language](https://img.shields.io/badge/language-C-blue)
+![Standard](https://img.shields.io/badge/C%20Standard-C11-blueviolet)
+![Platform](https://img.shields.io/badge/platform-CLI-lightgrey)
+![Status](https://img.shields.io/badge/status-learning-orange)
+
 A simple command-line logbook written in C.
 
 This project is a learning exercise focused on:
