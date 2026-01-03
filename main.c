@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <inttypes.h>
+#include <time.h>
 
 #define title_size 51
 #define content_size 513
@@ -40,13 +41,16 @@ int add_entry(void)
     printf("content : ");
     scanf("%512[^\n]", entry.content);
     getchar();
-    printf("entry: %"PRIu32"\ntitle: %s\ncontent: %s\n",
-            entry.id, entry.title, entry.content);
+    time_t now = time (NULL);
+    struct tm *t = localtime(&now);
+    strftime(entry.date, sizeof(entry.date), "%Y-%m-%d %H:%M:%S", t);
+    printf("entry: %"PRIu32"\ntitle: %s\ncontent: %s\ndate : %s\n",
+            entry.id, entry.title, entry.content, entry.date);
 
-    FILE *file = fopen("logbook.txt", "a");
+    FILE *file = fopen(LOGFILE, "a");
 
     if (file != NULL){
-        fprintf(file,"%"PRIu32"|%s|%s\n", entry.id, entry.title, entry.content);
+        fprintf(file,"%"PRIu32"|%s|%s|%s\n", entry.id, entry.title, entry.content, entry.date);
         fclose(file);
         printf("log saved\n");
     }else {
@@ -83,7 +87,7 @@ int main(void)
 
     do{
         printf("\n---Menu---\n");
-        printf(" 1 - Add entry\n");
+        printf("1 - Add entry\n");
         printf("2 - Show entries\n");
         printf("3 - Quit\n");
         scanf("%"PRIu32"",&choice);
