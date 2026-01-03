@@ -22,6 +22,7 @@ This project is a learning exercise focused on:
   - an auto-incremented ID
   - a title
   - a content text
+  - a timestamp (YYYY-MM-DD HH:MM:SS)
 - Entries are saved persistently in a text file
 - Display all saved entries
 - Simple interactive menu
@@ -32,8 +33,8 @@ Entries are stored in a plain text file (`logbook.txt`) using the following form
 
 Example :
 
-`1|First test|My first log entry|`
-`2|Second test|My second log entry|`
+`1|First test|My first log entry|2026-01-03 14:12:05`
+`2|Second test|My second log entry|2026-01-03 14:15:22`
 
 ## Build
 
@@ -58,8 +59,6 @@ Input buffer handling is done manually to avoid common pitfalls with scanf.
 ## Possible improvements
 
 * Parse and display entries in a formatted way
-
-* Add dates to entries
 
 * Edit or delete entries
 
